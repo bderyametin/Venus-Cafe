@@ -17,15 +17,21 @@ Venüs Kafe, samimi bir mahalle kültürünü modern bir yaklaşımla sunan bir 
 - (Lighthouse skorları PDF raporunda mevcuttur. Erişilebilirlik ve Performans odaklı tasarlanmıştır.)
 
 ## 📷 Ekran Görüntüleri
-*(Proje teslimi öncesi canlıya alındığında ekran görüntüleri buraya eklenebilir)*
+
+### Ana Sayfa
+![Ana Sayfa](images/ana-sayfa.jpeg)
+
+### Karanlık Mod
+![Karanlık Mod](images/karanlik-mod.jpeg)
+
+### Etkinlik ve Organizasyon
+![Etkinlik Görseli](images/etkinlik-gorseli.jpeg)
 
 ## 📂 Klasör Yapısı
 - `css/` : Stil dosyaları (CSS değişkenleri ve dark mode içerir).
 - `js/` : JavaScript dosyaları.
-- `images/` : WebP formatına çevrilmiş optimize görseller.
+- `images/` : WebP formatına çevrilmiş optimize görseller ve ekran görüntüleri.
 - `index.html` : Ana sayfa şablonu.
-- `Proje_Raporu.md` : Proje hakkında detaylı değerlendirme (PDF'e dönüştürülecek).
-- `optimize.js` : Resimleri WebP yapmak için kullanılan Node betiği.
 
 ## 🎓 Geliştirme Süreci (Commit'ler)
 Proje 5 aşamalı anlamlı commit'lerle inşa edilmiştir.
