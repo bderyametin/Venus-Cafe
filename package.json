@@ -1,0 +1,16 @@
+{
+  "name": "final-projesi",
+  "version": "1.0.0",
+  "description": "Bu proje, Venüs Kafe için geliştirilmiş modern, şık ve turuncu renk paletine sahip bir tanıtım web sitesidir (One-Page).",
+  "main": "optimize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
