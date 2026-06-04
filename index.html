@@ -16,6 +16,7 @@
 
     <link rel="icon" type="image/webp" href="images/logo.webp">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" as="image" href="images/kafe-dis-mekan1.webp">
     <!-- Google Analytics (Placeholder) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -31,7 +32,7 @@
     <header>
         <div class="container navbar">
             <div class="logo">
-                <img src="images/logo.webp" alt="Venüs Kafe Logo" style="height: 40px; border-radius: 50%;">
+                <img src="images/logo.webp" alt="Venüs Kafe Logo" width="40" height="40" style="height: 40px; width: 40px; border-radius: 50%;">
                 Venüs Kafe
             </div>
 
@@ -228,20 +229,20 @@
                     data-en="We host organizations in our cafe.">Kafemizde organizasyon alınır.</p>
                 <div class="gallery-grid">
                     <div class="gallery-item" title="Büyütmek için tıklayın">
-                        <img src="images/kafe-dis-mekan2.webp" alt="Kafe Dış Mekan 1" loading="lazy">
+                        <img src="images/kafe-dis-mekan2.webp" alt="Kafe Dış Mekan 1" width="600" height="600" loading="lazy">
                         <div class="gallery-caption" style="display:none;">Ferah dış mekanımızda keyifli anlar</div>
                     </div>
                     <div class="gallery-item" title="Büyütmek için tıklayın">
-                        <img src="images/kafe-ic-mekan1.webp" alt="Kafe İç Mekan 1" loading="lazy">
+                        <img src="images/kafe-ic-mekan1.webp" alt="Kafe İç Mekan 1" width="600" height="600" loading="lazy">
                         <div class="gallery-caption" style="display:none;">Sıcak ve samimi iç mekan tasarımımız</div>
                     </div>
                     <div class="gallery-item" title="Büyütmek için tıklayın">
-                        <img src="images/kafe-organizyon1.webp" alt="Organizasyon 1" loading="lazy">
+                        <img src="images/kafe-organizyon1.webp" alt="Organizasyon 1" width="600" height="600" loading="lazy">
                         <div class="gallery-caption" style="display:none;">Özel günleriniz ve kutlamalarınız için şık
                             sunumlar</div>
                     </div>
                     <div class="gallery-item" title="Büyütmek için tıklayın">
-                        <img src="images/kafe-ic-mekan2.webp" alt="Kafe İç Mekan 2" loading="lazy">
+                        <img src="images/kafe-ic-mekan2.webp" alt="Kafe İç Mekan 2" width="600" height="600" loading="lazy">
                         <div class="gallery-caption" style="display:none;">Rahatlatıcı atmosferimizde kahve molası</div>
                     </div>
                 </div>
@@ -314,7 +315,7 @@
         <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
             <div class="footer-logo"
                 style="display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: bold;">
-                <img src="images/logo.webp" alt="Venüs Kafe Logo" style="height: 40px; border-radius: 50%;">
+                <img src="images/logo.webp" alt="Venüs Kafe Logo" width="40" height="40" style="height: 40px; width: 40px; border-radius: 50%;">
                 Venüs Kafe
             </div>
             <div class="social-links">
@@ -329,11 +330,11 @@
     <!-- Lightbox (Tam Ekran Görsel) Modülü -->
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Büyük Görsel">
+        <img class="lightbox-content" id="lightbox-img" alt="Büyük Görsel" width="800" height="600" loading="lazy">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
