@@ -13,7 +13,7 @@ Venüs Kafe, samimi bir mahalle kültürünü modern bir yaklaşımla sunan bir 
 - **Formspree:** İletişim formu entegrasyonu.
 
 ## 🔗 Canlı Site ve Lighthouse
-- Canlı Site Linki: `[Buraya Mergen vb. URL eklenecek]`
+- Canlı Site Linki: [https://bderyametin.github.io/Venus-Cafe/](https://bderyametin.github.io/Venus-Cafe/)
 - (Lighthouse skorları PDF raporunda mevcuttur. Erişilebilirlik ve Performans odaklı tasarlanmıştır.)
 
 ## 📷 Ekran Görüntüleri
