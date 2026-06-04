@@ -1,109 +1,109 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navLinks = document.getElementById('nav-links');
+    const mobilTetikleyici = document.getElementById('mobile-toggle');
+    const navigasyonLinkleri = document.getElementById('nav-links');
 
-    if (mobileToggle && navLinks) {
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    if (mobilTetikleyici && navigasyonLinkleri) {
+        mobilTetikleyici.addEventListener('click', () => {
+            navigasyonLinkleri.classList.toggle('active');
         });
 
         // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        navigasyonLinkleri.querySelectorAll('a').forEach(baglanti => {
+            baglanti.addEventListener('click', () => {
+                navigasyonLinkleri.classList.remove('active');
             });
         });
     }
 
     // 2. Header Scroll Effect (Sticky & Shadow)
-    const header = document.querySelector('header');
+    const baslik = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            baslik.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
         } else {
-            header.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+            baslik.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
         }
     });
 
     // 3. Dark Mode Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
+    const temaTetikleyici = document.getElementById('theme-toggle');
+    const htmlElemani = document.documentElement;
 
     // Check local storage or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const kaydedilmisTema = localStorage.getItem('theme');
+    const sistemKaranlik = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
-        htmlElement.setAttribute('data-theme', 'dark');
-        themeToggle.textContent = '☀️';
+    if (kaydedilmisTema === 'dark' || (!kaydedilmisTema && sistemKaranlik)) {
+        htmlElemani.setAttribute('data-theme', 'dark');
+        temaTetikleyici.textContent = '☀️';
     }
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-            htmlElement.setAttribute('data-theme', 'light');
-            themeToggle.textContent = '🌙';
+    temaTetikleyici.addEventListener('click', () => {
+        const guncelTema = htmlElemani.getAttribute('data-theme');
+        if (guncelTema === 'dark') {
+            htmlElemani.setAttribute('data-theme', 'light');
+            temaTetikleyici.textContent = '🌙';
             localStorage.setItem('theme', 'light');
         } else {
-            htmlElement.setAttribute('data-theme', 'dark');
-            themeToggle.textContent = '☀️';
+            htmlElemani.setAttribute('data-theme', 'dark');
+            temaTetikleyici.textContent = '☀️';
             localStorage.setItem('theme', 'dark');
         }
     });
 
     // 4. Multi-language Support (TR/EN)
-    const langToggle = document.getElementById('lang-toggle');
-    const translatableElements = document.querySelectorAll('[data-tr][data-en]');
+    const dilTetikleyici = document.getElementById('lang-toggle');
+    const cevrilebilirElemanlar = document.querySelectorAll('[data-tr][data-en]');
 
-    let currentLang = localStorage.getItem('lang') || 'tr';
+    let guncelDil = localStorage.getItem('lang') || 'tr';
     
-    const applyLanguage = (lang) => {
-        translatableElements.forEach(el => {
-            el.textContent = el.getAttribute(`data-${lang}`);
+    const dilUygula = (secilenDil) => {
+        cevrilebilirElemanlar.forEach(eleman => {
+            eleman.textContent = eleman.getAttribute(`data-${secilenDil}`);
         });
         
         // Form placeholder translations could go here if any
 
-        if (lang === 'tr') {
-            langToggle.textContent = 'EN';
+        if (secilenDil === 'tr') {
+            dilTetikleyici.textContent = 'EN';
             document.documentElement.lang = 'tr';
         } else {
-            langToggle.textContent = 'TR';
+            dilTetikleyici.textContent = 'TR';
             document.documentElement.lang = 'en';
         }
     };
 
     // Apply saved language on load
-    applyLanguage(currentLang);
+    dilUygula(guncelDil);
 
-    langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'tr' ? 'en' : 'tr';
-        applyLanguage(currentLang);
-        localStorage.setItem('lang', currentLang);
+    dilTetikleyici.addEventListener('click', () => {
+        guncelDil = guncelDil === 'tr' ? 'en' : 'tr';
+        dilUygula(guncelDil);
+        localStorage.setItem('lang', guncelDil);
     });
 
     // 5. Scroll Animations (Simple Intersection Observer)
-    const observerOptions = {
+    const gozlemciAyarlari = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+    const gozlemci = new IntersectionObserver((girisler) => {
+        girisler.forEach(giris => {
+            if (giris.isIntersecting) {
+                giris.target.style.opacity = '1';
+                giris.target.style.transform = 'translateY(0)';
+                gozlemci.unobserve(giris.target);
             }
         });
-    }, observerOptions);
+    }, gozlemciAyarlari);
 
-    const animateElements = document.querySelectorAll('.feature-card, .menu-item, .gallery-item');
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
+    const hareketliElemanlar = document.querySelectorAll('.feature-card, .menu-item, .gallery-item');
+    hareketliElemanlar.forEach(eleman => {
+        eleman.style.opacity = '0';
+        eleman.style.transform = 'translateY(20px)';
+        eleman.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        gozlemci.observe(eleman);
     });
 });
