@@ -328,6 +328,29 @@ header {
     font-size: 1.25rem;
 }
 
+.menu-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed);
+}
+
+.menu-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--primary-light);
+}
+
+.menu-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+}
+
 /* Gallery Section */
 .gallery-grid {
     display: grid;
