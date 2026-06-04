@@ -1,9 +1,9 @@
 :root {
-    /* Color Palette - Orange Theme */
-    --primary-color: #f97316; /* Tailwind Orange-500 */
-    --primary-hover: #ea580c; /* Tailwind Orange-600 */
+    /* Renk Paleti - Turuncu Tema */
+    --primary-color: #f97316; /* Tailwind Turuncu-500 */
+    --primary-hover: #ea580c; /* Tailwind Turuncu-600 */
     --primary-light: #ffedd5;
-    --secondary-color: #111827; /* Dark Gray */
+    --secondary-color: #111827; /* Koyu Gri */
     --bg-color: #fafaf9;
     --text-color: #3f3f46;
     --text-muted: #71717a;
@@ -11,16 +11,16 @@
     --border-color: #e4e4e7;
     --transition-speed: 0.4s;
     
-    /* Typography */
+    /* Tipografi */
     --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
     
-    /* Shadows */
+    /* Gölgeler */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Dark Mode Variables */
+/* Karanlık Mod Değişkenleri */
 [data-theme="dark"] {
     --bg-color: #09090b;
     --text-color: #f4f4f5;
@@ -31,7 +31,7 @@
     --primary-light: #431407;
 }
 
-/* Reset & Base Styles */
+/* Sıfırlama ve Temel Stiller */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -68,7 +68,7 @@ ul {
     list-style: none;
 }
 
-/* Container */
+/* Kapsayıcı (Container) */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -76,7 +76,7 @@ ul {
     padding: 0 1.5rem;
 }
 
-/* Typography Classes */
+/* Tipografi Sınıfları */
 h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-color);
     font-weight: 800;
@@ -85,13 +85,13 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.025em;
 }
 
-/* Buttons */
+/* Butonlar */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.875rem 2rem;
-    border-radius: 9999px; /* Pill shape */
+    border-radius: 9999px; /* Hap şekli (Pill) */
     font-weight: 600;
     text-align: center;
     cursor: pointer;
@@ -123,17 +123,17 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 14px 0 rgba(249, 115, 22, 0.39);
 }
 
-/* Utilities */
+/* Yardımcı Sınıflar */
 .text-center { text-align: center; }
 .mt-4 { margin-top: 1.5rem; }
 .mb-4 { margin-bottom: 1.5rem; }
 
-/* Sections */
+/* Bölümler */
 section {
     padding: 6rem 0;
 }
 
-/* Header & Nav (Glassmorphism) */
+/* Üst Kısım ve Navigasyon (Glassmorphism) */
 header {
     background-color: rgba(var(--bg-color), 0.8);
     backdrop-filter: blur(12px);
@@ -194,7 +194,7 @@ header {
     width: 100%;
 }
 
-/* Controls (Dark Mode & Lang) */
+/* Kontroller (Karanlık Mod ve Dil) */
 .nav-controls {
     display: flex;
     align-items: center;
@@ -223,7 +223,7 @@ header {
     transform: rotate(15deg);
 }
 
-/* Mobile Menu Toggle */
+/* Mobil Menü Aç/Kapat */
 .mobile-toggle {
     display: none;
     font-size: 1.5rem;
@@ -233,7 +233,7 @@ header {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* Ana Ekran (Hero) Bölümü */
 .hero {
     margin-top: 80px;
     height: calc(100vh - 80px);
@@ -261,7 +261,7 @@ header {
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Features Grid */
+/* Özellikler Izgarası */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -294,7 +294,7 @@ header {
     border-radius: 1rem;
 }
 
-/* Menu Section */
+/* Menü Bölümü */
 #menu {
     background-color: var(--card-bg);
     position: relative;
@@ -351,7 +351,7 @@ header {
     border-radius: 0;
 }
 
-/* Gallery Section */
+/* Galeri Bölümü */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -379,7 +379,7 @@ header {
     transform: scale(1.15);
 }
 
-/* Contact Section */
+/* İletişim Bölümü */
 #contact {
     background-color: var(--card-bg);
     border-top: 1px solid var(--border-color);
@@ -459,9 +459,9 @@ textarea.form-control {
     min-height: 150px;
 }
 
-/* Footer */
+/* Alt Bilgi (Footer) */
 footer {
-    background-color: #09090b; /* Always dark */
+    background-color: #09090b; /* Her zaman karanlık */
     color: #a1a1aa;
     padding: 4rem 0;
     text-align: center;
@@ -491,7 +491,7 @@ footer .social-links a:hover {
     transform: translateY(-3px);
 }
 
-/* Responsive Design */
+/* Duyarlı (Responsive) Tasarım */
 
 @media (max-width: 1024px) {
     .hero h1 { font-size: 3.5rem; }
@@ -534,7 +534,7 @@ footer .social-links a:hover {
     .contact-form { padding: 2rem 1.5rem; }
 }
 
-/* Lightbox Styles */
+/* Lightbox Stilleri */
 .lightbox {
     display: none;
     position: fixed;
