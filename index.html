@@ -188,17 +188,21 @@
                 <h2 class="text-center" data-tr="Organizasyonlarımız" data-en="Our Organizations">Organizasyonlarımız</h2>
                 <p class="text-center text-muted" style="margin-bottom: 2rem;" data-tr="Kafemizde organizasyon alınır." data-en="We host organizations in our cafe.">Kafemizde organizasyon alınır.</p>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" title="Büyütmek için tıklayın">
                         <img src="images/kafe-dis-mekan2.webp" alt="Kafe Dış Mekan 1" loading="lazy">
+                        <div class="gallery-caption" style="display:none;">Ferah dış mekanımızda keyifli anlar</div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" title="Büyütmek için tıklayın">
                         <img src="images/kafe-ic-mekan1.webp" alt="Kafe İç Mekan 1" loading="lazy">
+                        <div class="gallery-caption" style="display:none;">Sıcak ve samimi iç mekan tasarımımız</div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" title="Büyütmek için tıklayın">
                         <img src="images/kafe-organizyon1.webp" alt="Organizasyon 1" loading="lazy">
+                        <div class="gallery-caption" style="display:none;">Özel günleriniz ve kutlamalarınız için şık sunumlar</div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" title="Büyütmek için tıklayın">
                         <img src="images/kafe-ic-mekan2.webp" alt="Kafe İç Mekan 2" loading="lazy">
+                        <div class="gallery-caption" style="display:none;">Rahatlatıcı atmosferimizde kahve molası</div>
                     </div>
                 </div>
             </div>
@@ -273,6 +277,13 @@
             <p>&copy; 2026 Venüs Kafe. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Büyük Görsel">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

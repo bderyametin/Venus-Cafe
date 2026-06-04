@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
+    // 1. Mobil Menü Aç/Kapat
     const mobilTetikleyici = document.getElementById('mobile-toggle');
     const navigasyonLinkleri = document.getElementById('nav-links');
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navigasyonLinkleri.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
+        // Bir bağlantıya tıklandığında menüyü kapat
         navigasyonLinkleri.querySelectorAll('a').forEach(baglanti => {
             baglanti.addEventListener('click', () => {
                 navigasyonLinkleri.classList.remove('active');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Header Scroll Effect (Sticky & Shadow)
+    // 2. Header Kaydırma Efekti (Sabit ve Gölgeli)
     const baslik = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Dark Mode Toggle
+    // 3. Karanlık Mod Değiştirici
     const temaTetikleyici = document.getElementById('theme-toggle');
     const htmlElemani = document.documentElement;
 
-    // Check local storage or system preference
+    // Yerel depolamayı veya sistem tercihini kontrol et
     const kaydedilmisTema = localStorage.getItem('theme');
     const sistemKaranlik = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Multi-language Support (TR/EN)
+    // 4. Çoklu Dil Desteği (TR/EN)
     const dilTetikleyici = document.getElementById('lang-toggle');
     const cevrilebilirElemanlar = document.querySelectorAll('[data-tr][data-en]');
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             eleman.textContent = eleman.getAttribute(`data-${secilenDil}`);
         });
         
-        // Form placeholder translations could go here if any
+        // Varsa form yer tutucu çevirileri buraya eklenebilir
 
         if (secilenDil === 'tr') {
             dilTetikleyici.textContent = 'EN';
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Apply saved language on load
+    // Kaydedilmiş dili sayfa yüklenirken uygula
     dilUygula(guncelDil);
 
     dilTetikleyici.addEventListener('click', () => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lang', guncelDil);
     });
 
-    // 5. Scroll Animations (Simple Intersection Observer)
+    // 5. Kaydırma Animasyonları (Basit Intersection Observer)
     const gozlemciAyarlari = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
@@ -106,4 +106,38 @@ document.addEventListener('DOMContentLoaded', () => {
         eleman.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         gozlemci.observe(eleman);
     });
+
+    // 6. Galeri Lightbox (Tam Ekran Görsel)
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (lightbox && galleryItems) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const caption = item.querySelector('.gallery-caption');
+                if (img) {
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = caption ? caption.textContent : '';
+                    lightbox.style.display = 'flex';
+                    // Animasyon için küçük bir gecikme
+                    setTimeout(() => {
+                        lightbox.classList.add('active');
+                    }, 10);
+                }
+            });
+        });
+
+        // Lightbox dışına tıklandığında kapat
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300); // Transition süresi ile uyumlu
+            }
+        });
+    }
 });
